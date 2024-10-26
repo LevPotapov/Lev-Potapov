@@ -1,7 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Telegraf } from 'telegraf';
+import { Context, Telegraf } from 'telegraf';
 import { TelegramOptions } from './telegram-options.interface';
 import { TELEGRAM_MODULE_OPTIONS } from './telegram-bot.constants';
+import { MailResponseDto } from './dto/mail-response.dto';
 
 @Injectable()
 export class TelegramBotService {
@@ -16,21 +17,49 @@ export class TelegramBotService {
     await this.bot.telegram.sendMessage(chatId, message);
   }
 
-  async botLauncher(domain: string, port: number, path: string) {
+  async botLauncher(
+    domain: string,
+    port: number,
+    path: string,
+    secretToken: string,
+  ) {
     await this.bot.launch({
       webhook: {
         domain: domain,
         port: port,
         path: path,
+        secretToken: secretToken,
       },
     });
   }
 
-  async redirectingResponses(ctx: any, chatId: string = this.options.chatId) {
+  async gettingResponse(
+    ctx: Context,
+    chatId: string = this.options.chatId,
+  ): Promise<MailResponseDto> {
     const message = '👍';
     await this.bot.telegram.sendMessage(chatId, message);
-    const direction = ctx.message.reply_to_message.text;
-    const responseMessage = ctx.message.text;
-    console.log(direction, `\nResponse: ${responseMessage}`);
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    let name = ctx.message.reply_to_message.text.split('Email:  ');
+    name = name[0].split('Name:  ');
+    name = name[1].split('\n')[0];
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    let email = ctx.message.reply_to_message.text.split('Phone:  ')[0];
+    email = email.split('Email:  ')[1];
+    email = email.split('\n')[0];
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    const text = ctx.message.text;
+
+    return {
+      name,
+      email,
+      text,
+    };
   }
 }

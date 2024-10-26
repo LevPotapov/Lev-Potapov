@@ -8,6 +8,9 @@ export class Message {
   _id: mongoose.Types.ObjectId | string;
 
   @Prop({ required: true })
+  userName: string;
+
+  @Prop({ required: true })
   email: string;
 
   @Prop({ required: true })
