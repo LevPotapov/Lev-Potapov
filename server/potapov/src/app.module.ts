@@ -9,6 +9,7 @@ import { getTelegramBotConfig } from './config/telegram-bot.config';
 import { MailerModule } from './mailer/mailer.module';
 import { SkillsModule } from './skills/skills.module';
 import { ProjectsModule } from './projects/projects.module';
+import { FilesModule } from './files/files.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { ProjectsModule } from './projects/projects.module';
     MailerModule,
     SkillsModule,
     ProjectsModule,
+    FilesModule,
   ],
 })
 export class AppModule {}

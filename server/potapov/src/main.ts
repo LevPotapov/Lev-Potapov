@@ -6,7 +6,7 @@ import { SessionBuilder } from '@ngrok/ngrok';
 import { TelegramBotService } from './telegram-bot/telegram-bot.service';
 
 async function bootstrap() {
-  const port = 3000;
+  const port = 4000;
   const app = await NestFactory.create(AppModule);
   app.enableCors();
   app.setGlobalPrefix('api');
@@ -38,7 +38,7 @@ async function bootstrap() {
   });
   bot.botLauncher(
     listener.url(),
-    4000,
+    5000,
     '/api/messages/returns',
     process.env.TELEGRAM_BOT_API_SECRET_TOKEN,
   );
