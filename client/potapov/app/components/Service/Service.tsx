@@ -59,7 +59,7 @@ const Service = ({
                 <h4 className=" text-base font-medium my-2">
                     {`Stack: ${stack.join(', ')}.`}
                 </h4>
-                <p className="h-48 ">{description}</p>
+                <p className="h-48">{description}</p>
             </div>
         </div>
     )
