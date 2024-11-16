@@ -15,6 +15,10 @@ export class Project {
 
   @ApiProperty()
   @Prop({ required: true })
+  technologies: string[];
+
+  @ApiProperty()
+  @Prop({ required: true })
   title: string;
 
   @ApiProperty()

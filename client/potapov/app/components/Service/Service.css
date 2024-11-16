@@ -1,0 +1,100 @@
+.buttonIcon {
+    display: none;
+}
+
+@media all and (width <= 1536px) {
+    .service h3 {
+        font-size: 1rem;
+    }
+    .service h4 {
+        font-size: 0.9rem;
+    }
+    .service p {
+        font-size: 0.8rem;
+    }
+    .workIcon {
+        width: 48;
+        height: 48;
+    }
+}
+
+@media all and (width <= 1050px) {
+    .service {
+        border-radius: 40px;
+        height: 100%;
+        padding: 30px;
+    }
+    .service h3 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0;
+    }
+    .service h4 {
+        font-size: 1.1rem;
+        margin-top: 20px;
+    }
+    .service p {
+        font-size: 1rem;
+    }
+
+    .buttonIcon {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .titleContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .workIcon {
+        width: 84;
+        height: 84;
+    }
+
+    .serviceBorderTextContainer {
+        margin-top: 20px;
+        border-top: 3px solid #cacbd2;
+    }
+
+    .serviceTextContainer {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease-in-out;
+    }
+
+    .serviceTextContainerShow {
+        height: 150px;
+        transition: height 0.5s ease-in-out;
+    }
+}
+
+@media all and (width <= 560px) {
+    .workIcon {
+        width: 48;
+        height: 48;
+    }
+    .buttonIcon {
+        height: 18px;
+        width: 18px;
+    }
+    .service h3 {
+        font-size: 18px;
+    }
+    .service h4 {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .service p {
+        font-size: 12px;
+    }
+    .serviceBorderTextContainer {
+        border-top: 2px solid #cacbd2;
+    }
+}
+
+@media all and (width <= 400px) {
+    .service p {
+        display: none;
+    }
+}

@@ -1,0 +1,88 @@
+@media all and (width <= 1440px) {
+    .contactForm {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+@media all and (width <= 1350px) {
+    .contactForm form {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+@media all and (width <= 1150px) {
+    .contactForm form {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .contactForm {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media all and (width <= 1050px) {
+    .contactForm form {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .contactForm {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+
+    .telAndMail {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .telAndMail div {
+        margin-left: 0;
+    }
+}
+
+@media all and (width <= 560px) {
+    .contactForm form {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .contactForm {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .telAndMail {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    #form h2 {
+        font-size: 22px;
+    }
+
+    #form p {
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #name {
+        font-size: 12px;
+    }
+
+    #message {
+        font-size: 12px;
+    }
+
+    #form button {
+        font-size: 14px;
+    }
+}

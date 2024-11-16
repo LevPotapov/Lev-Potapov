@@ -14,6 +14,7 @@ const config: Config = {
             colors: {
                 grey_dark: '#575860',
                 shadow: '#0A1F4412',
+                black: '#010815',
                 blue_2: '#1B5ED2',
                 gray: '#CACBD2',
                 'light-gray': '#F3F7FA',
@@ -22,7 +23,9 @@ const config: Config = {
                 foreground: 'var(--foreground)',
             },
             spacing: {
+                desktop: '525px',
                 '192': '710px',
+                '999': '999999px',
             },
             height: {
                 '90': '360px',

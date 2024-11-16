@@ -1,0 +1,11 @@
+@media all and (width <= 1200px) {
+    .logo {
+        font-size: 16px;
+    }
+}
+
+@media all and (width <= 560px) {
+    .logo {
+        font-size: 12px;
+    }
+}

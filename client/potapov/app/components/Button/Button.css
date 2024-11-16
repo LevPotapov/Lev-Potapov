@@ -1,0 +1,11 @@
+@media all and (width <= 1200px) {
+    .button {
+        font-size: 14px;
+    }
+}
+
+@media all and (width <= 560px) {
+    .button {
+        font-size: 11px;
+    }
+}

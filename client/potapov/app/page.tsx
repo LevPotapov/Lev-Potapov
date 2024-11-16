@@ -1,13 +1,18 @@
-import About from './components/About'
-import ContactForm from './components/ContactForm'
-import Services from './components/Services'
-import Works from './components/Works'
+import About from './components/About/About'
+import ContactForm from './components/ContactForm/ContactForm'
+import Services from './components/Services/Services'
+import Works from './components/Works/Works'
+
+export const metadata = {
+    title: 'Potapov',
+    description: 'site web du développeur  Lev Potapov',
+}
 
 export default function Home() {
     return (
         <>
             <About />
-            <div className="bg-light-gray">
+            <div className="bg-light-gray contentContainer">
                 <Works />
                 <Services />
                 <ContactForm />

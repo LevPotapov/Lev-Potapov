@@ -1,0 +1,85 @@
+.expansion-body {
+    overflow: hidden;
+    max-height: 10000px;
+    transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+}
+
+.expansion-hide {
+    max-height: 0;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+@media all and (width <= 1440px) {
+    .works {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    #works {
+        font-size: 42px;
+    }
+
+    .worksText {
+        font-size: 14px;
+    }
+}
+
+@media all and (width <= 1150px) {
+    .works {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media all and (width <= 1050px) {
+    .works {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 350px;
+    }
+
+    .projectsIntroduction {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #works {
+        font-size: 36px;
+    }
+    .worksText {
+        font-size: 1rem;
+    }
+
+    .worksContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media all and (width <= 560px) {
+    .buttonAfficher {
+        margin: 0px;
+    }
+
+    .works {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-bottom: 0px;
+    }
+
+    #works {
+        font-size: 22px;
+    }
+
+    .projectsIntroduction p {
+        font-size: 14px;
+    }
+
+    .projectsIntroduction {
+        gap: 5px;
+    }
+
+    .worksContainer {
+        gap: 0px;
+    }
+}

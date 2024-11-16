@@ -1,5 +1,10 @@
-export default async function getData(url: string): Promise<Array<any>> {
-    const res = await fetch(url)
-    const parsedJson = res.json()
-    return parsedJson
+export default async function getData(url: string): Promise<any[] | undefined> {
+    try {
+        const res = await fetch(url)
+        const parsedJson = res.json()
+        return parsedJson
+    } catch (error) {
+        console.log(error)
+        return undefined
+    }
 }

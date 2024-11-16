@@ -1,0 +1,162 @@
+.technologiesMobile {
+    display: none;
+}
+
+@media all and (width <= 1440px) {
+    .about {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    .technologies {
+        left: 6rem;
+        right: 6rem;
+    }
+    .introduction {
+        margin-top: 100px;
+    }
+    .introduction h1 {
+        font-size: 42px;
+    }
+    .introduction h1 {
+        font-size: 36px;
+    }
+}
+
+@media all and (width <= 1200px) {
+    .introduction {
+        margin-top: 75px;
+    }
+    .introduction h1 {
+        font-size: 36px;
+    }
+    .introduction h1 {
+        font-size: 36px;
+    }
+    .technologies img {
+        height: 36px;
+        width: 36px;
+    }
+    .aboutButton {
+        height: 42px;
+        width: 180px;
+    }
+}
+
+@media all and (width <= 1150px) {
+    .about {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .technologies {
+        left: 2rem;
+        right: 2rem;
+    }
+}
+
+@media all and (width <= 1050px) {
+    .about {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .technologies {
+        left: 1rem;
+        right: 1rem;
+    }
+}
+
+@media all and (width <= 880px) {
+    #myPhoto {
+        position: absolute;
+        right: 5px;
+        bottom: 0;
+        width: 240px;
+        height: 360px;
+    }
+
+    .technologies {
+        display: none;
+    }
+
+    .technologiesMobile {
+        display: grid;
+    }
+
+    .technologiesMobile div:nth-child(odd) {
+        border-right: 1px solid #cacbd2;
+    }
+
+    .introduction h1 {
+        max-width: 70%;
+    }
+
+    .introduction p {
+        max-width: 70%;
+    }
+}
+
+@media all and (width <= 640px) {
+    .introduction h1 {
+        font-size: 22px;
+    }
+
+    .introduction p {
+        font-size: 14px;
+    }
+}
+
+@media all and (width <= 560px) {
+    .introduction {
+        margin-top: 50px;
+        max-width: 100%;
+    }
+
+    #myPhoto {
+        position: absolute;
+        right: 5px;
+        bottom: 0;
+        width: 240px;
+        height: 320px;
+    }
+
+    .about {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        height: 540px;
+    }
+
+    .technologies {
+        display: none;
+    }
+
+    .technologiesMobile {
+        display: grid;
+        left: 8px;
+        right: 8px;
+    }
+
+    .technologiesMobile div:nth-child(odd) {
+        border-right: 1px solid #cacbd2;
+    }
+
+    .aboutButton {
+        width: 140px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 11px;
+    }
+}
+
+@media all and (width <= 400px) {
+    .introduction {
+        margin-top: 40px;
+    }
+
+    .introduction p {
+        max-width: 100%;
+    }
+    .introduction h1 {
+        max-width: 100%;
+    }
+}

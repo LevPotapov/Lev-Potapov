@@ -1,0 +1,83 @@
+.workButton {
+    display: none;
+}
+
+@media all and (width <= 1536px) {
+    .work h3 {
+        font-size: 1rem;
+    }
+    .work h4 {
+        font-size: 0.9rem;
+    }
+    .work p {
+        font-size: 0.8rem;
+    }
+}
+
+@media all and (width <= 1350px) {
+    .works {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+@media all and (width <= 1050px) {
+    .work {
+        height: 100%;
+    }
+    .work h3 {
+        font-size: 1.4rem;
+    }
+    .work h4 {
+        font-size: 1.1rem;
+    }
+    .work p {
+        font-size: 1rem;
+    }
+
+    .workButton {
+        display: block;
+    }
+
+    .workDescriptionHidden {
+        position: static;
+        height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        transition: height 0.5s cubic-bezier(0, 1, 0, 1);
+        opacity: 1;
+    }
+
+    .workDescriptionShow {
+        margin-top: 1.5rem;
+        height: 500px;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        transition: height 0.5s cubic-bezier(0, 1, 0, 1);
+    }
+
+    .btnClose button {
+        background-color: white;
+        color: black;
+    }
+}
+
+@media all and (width <= 560px) {
+    .work h3 {
+        font-size: 20px;
+    }
+    .work h4 {
+        font-size: 16px;
+    }
+    .work p {
+        font-size: 12px;
+    }
+
+    .workButton {
+        bottom: 60px;
+    }
+
+    .workDescriptionShow {
+        height: 450px;
+    }
+}

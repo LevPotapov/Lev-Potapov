@@ -1,0 +1,138 @@
+.navModale,
+.headerMenuButtonOpen,
+.headerMenuButtonClose,
+.openCloseContainer {
+    display: none;
+}
+
+.modaleBackground {
+    width: 100%;
+    height: 10000px;
+    position: absolute;
+    top: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.header {
+    border-bottom: 1px solid #ecedef;
+}
+
+@media all and (width <= 1440px) {
+    .header {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+@media all and (width <= 1200px) {
+    .nav {
+        font-size: 14px;
+    }
+    .headerButton {
+        height: 42px;
+        width: 180px;
+    }
+}
+
+@media all and (width <= 1150px) {
+    .header {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media all and (width <= 1050px) {
+    .openCloseContainer {
+        display: block;
+    }
+
+    .header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .headerMenuButtonClose {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 15px;
+        opacity: 0;
+    }
+
+    .headerMenuButtonOpen {
+        display: block;
+        position: absolute;
+        top: 28px;
+        right: 15px;
+    }
+
+    .nav,
+    .headerContactLinks {
+        display: none;
+    }
+
+    .headerModaleShow {
+        display: flex;
+        width: 100%;
+        z-index: 2;
+        position: absolute;
+        top: 100%;
+        background-color: white;
+    }
+
+    .navLink {
+        width: 10%;
+        margin-left: 45%;
+        margin-right: 45%;
+    }
+
+    .displayNone {
+        display: none;
+    }
+
+    .displayBlock {
+        display: block;
+    }
+}
+
+@media all and (width <= 950px) {
+    .navLink {
+        width: 33.3%;
+        margin-left: 33.3%;
+        margin-right: 33.3%;
+    }
+}
+
+@media all and (width <= 560px) {
+    .navLink {
+        font-size: 12px;
+    }
+
+    .header {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 15px;
+        height: 56px;
+    }
+
+    .headerButton {
+        width: 140px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 11px;
+    }
+
+    .headerButtonsContainer {
+        gap: 15px;
+    }
+
+    .headerMenuButtonClose {
+        top: 15px;
+        right: 10px;
+    }
+
+    .headerMenuButtonOpen {
+        top: 18px;
+        right: 10px;
+    }
+}

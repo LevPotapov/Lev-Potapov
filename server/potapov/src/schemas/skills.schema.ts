@@ -19,6 +19,10 @@ export class Skill {
 
   @ApiProperty()
   @Prop({ required: true })
+  stack: string[];
+
+  @ApiProperty()
+  @Prop({ required: true })
   description: string;
 }
 

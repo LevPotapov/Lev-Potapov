@@ -1,0 +1,66 @@
+@media all and (width <= 1440px) {
+    .services {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+
+    #services {
+        font-size: 42px;
+    }
+
+    .servicesText {
+        font-size: 14px;
+    }
+}
+
+@media all and (width <= 1150px) {
+    .services {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media all and (width <= 1050px) {
+    .services {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #services {
+        font-size: 36px;
+    }
+
+    .servicesText {
+        font-size: 1rem;
+    }
+
+    .servicesIntroduction {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .servicesContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+@media all and (width <= 560px) {
+    .services {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    #services {
+        font-size: 22px;
+    }
+
+    .servicesText {
+        font-size: 14px;
+    }
+
+    .servicesIntroduction {
+        gap: 5px;
+    }
+}

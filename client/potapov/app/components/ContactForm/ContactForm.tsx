@@ -1,6 +1,7 @@
 'use client'
-import HOST_URL from '../config/configuration'
+import HOST_URL from '../../config/configuration'
 import { FormEvent } from 'react'
+import './ContactForm.css'
 
 const ContactForm = () => {
     const handlerSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -27,15 +28,34 @@ const ContactForm = () => {
             body: bodyJSON,
         })
 
+        const inputs: HTMLCollectionOf<HTMLInputElement> =
+            document.getElementsByTagName('input')
+
+        const textarea: HTMLTextAreaElement | null =
+            document.querySelector('textarea')
+
         if (response.ok) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             //@ts-ignore
             form.reset()
+            const addRemoveInputBorder = () => {
+                for (let i = 0; i < inputs.length; i++) {
+                    inputs.item(i)?.classList.toggle('border-2')
+                }
+                for (let i = 0; i < inputs.length; i++) {
+                    inputs.item(i)?.classList.toggle('border-lime-500')
+                }
+                textarea?.classList.toggle('border-2')
+                textarea?.classList.toggle('border-lime-500')
+            }
+            addRemoveInputBorder()
+
+            setTimeout(addRemoveInputBorder, 1000)
         }
     }
 
     return (
-        <div className="px-48 py-40">
+        <div id="form" className="px-48 py-40 contactForm">
             <div className="bg-blue text-white rounded-xl py-20">
                 <h2 className="text-center text-4xl font-bold mb-8">
                     ME CONTACTER
@@ -44,6 +64,7 @@ const ContactForm = () => {
                     Remplissez le formulaire et je vous contacterai bientôt
                 </p>
                 <form
+                    name="contactForm"
                     className="px-48 "
                     action={HOST_URL + 'api/messages/demands'}
                     method="POST"
@@ -55,6 +76,7 @@ const ContactForm = () => {
                             Nom Prénom
                         </label>
                         <input
+                            required
                             className="rounded-xl w-full p-4 text-black h-12"
                             name="name"
                             id="name"
@@ -63,7 +85,7 @@ const ContactForm = () => {
                         />
                     </div>
 
-                    <div className="flex mb-7">
+                    <div className="flex mb-7 telAndMail">
                         <div className="w-full mr-1">
                             <label
                                 className="block text-sm mb-2"
@@ -72,7 +94,8 @@ const ContactForm = () => {
                                 Téléphone
                             </label>
                             <input
-                                className="rounded-xl w-full p-4 text-black h-12"
+                                required
+                                className="rounded-xl w-full p-4 text-black h-12 "
                                 name="phone"
                                 id="phone"
                                 type="tel"
@@ -87,6 +110,7 @@ const ContactForm = () => {
                                 Email
                             </label>
                             <input
+                                required
                                 className="rounded-xl w-full p-4 text-black h-12"
                                 name="email"
                                 id="email"
@@ -99,12 +123,13 @@ const ContactForm = () => {
                         Message
                     </label>
                     <textarea
+                        required
                         className="rounded-xl w-full p-4 mb-5 resize-none text-black h-32"
                         id="message"
                         name="message"
                         placeholder="Votre message"
                     ></textarea>
-                    <button className="bg-blue_2 block rounded-xl w-full p-4 font-medium h-14">
+                    <button className="bg-blue_2 block rounded-xl w-full p-4 font-medium h-14 active:scale-95 transition-transform ease-out duration-300">
                         Envoyer
                     </button>
                 </form>
