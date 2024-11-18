@@ -19,7 +19,7 @@
 }
 
 @media all and (width <= 1440px) {
-    .header {
+    header .header {
         padding-left: 6rem;
         padding-right: 6rem;
     }
@@ -36,7 +36,7 @@
 }
 
 @media all and (width <= 1150px) {
-    .header {
+    header .header {
         padding-left: 2rem;
         padding-right: 2rem;
     }
@@ -47,7 +47,7 @@
         display: block;
     }
 
-    .header {
+    header .header {
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -66,8 +66,8 @@
         right: 15px;
     }
 
-    .nav,
-    .headerContactLinks {
+    header .nav,
+    header .headerContactLinks {
         display: none;
     }
 
@@ -108,14 +108,14 @@
         font-size: 12px;
     }
 
-    .header {
+    header .header {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         padding-top: 15px;
         height: 56px;
     }
 
-    .headerButton {
+    header .headerButton {
         width: 140px;
         height: 32px;
         border-radius: 4px;

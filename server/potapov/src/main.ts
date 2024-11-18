@@ -2,13 +2,14 @@ import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { Logger } from '@nestjs/common';
 import { AppModule } from './app.module';
-import { SessionBuilder } from '@ngrok/ngrok';
 import { TelegramBotService } from './telegram-bot/telegram-bot.service';
 
 async function bootstrap() {
   const port = 4000;
   const app = await NestFactory.create(AppModule);
-  app.enableCors();
+  app.enableCors({
+    origin: ['http://localhost:3000, http://51.254.112.166:3000'],
+  });
   app.setGlobalPrefix('api');
 
   //Swagger
@@ -24,12 +25,7 @@ async function bootstrap() {
   SwaggerModule.setup('swagger', app, documentFactory);
 
   await app.listen(port);
-
-  // Setup ngrok ingress
-  const session = await new SessionBuilder().authtokenFromEnv().connect();
-  const listener = await session.httpEndpoint().listen();
-  new Logger('main').log(`Ingress established at ${listener.url()}`);
-  listener.forward(`localhost:${port}`);
+  new Logger('main').log(`Ingress established at ${port}`);
 
   // Telegram bot
   const bot = new TelegramBotService({
@@ -37,7 +33,7 @@ async function bootstrap() {
     token: process.env.TELEGRAM_BOT_TOKEN,
   });
   bot.botLauncher(
-    listener.url(),
+    process.env.MY_URL,
     5000,
     '/api/messages/returns',
     process.env.TELEGRAM_BOT_API_SECRET_TOKEN,
