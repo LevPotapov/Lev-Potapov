@@ -1,3 +1,3 @@
-const HOST_URL: string = 'http://localhost:4000/'
+const HOST_URL: string = 'http://potapov.fr:4000/'
 
 export default HOST_URL

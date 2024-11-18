@@ -8,7 +8,9 @@ async function bootstrap() {
   const port = 4000;
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: ['http://localhost:3000, http://51.254.112.166:3000'],
+    origin: [
+      'http://localhost:3000, https://potapov.fr/:4000, https://potapov.fr/:3000, http://potapov.fr/:3000, http://potapov.fr/:4000',
+    ],
   });
   app.setGlobalPrefix('api');
 

@@ -2,6 +2,11 @@
     display: none;
 }
 
+.serviceIcon {
+    width: 84px;
+    height: 84px;
+}
+
 @media all and (width <= 1536px) {
     .service h3 {
         font-size: 1rem;
@@ -12,7 +17,7 @@
     .service p {
         font-size: 0.8rem;
     }
-    .workIcon {
+    .serviceIcon {
         width: 48;
         height: 48;
     }
@@ -47,7 +52,7 @@
         align-items: center;
         justify-content: space-between;
     }
-    .workIcon {
+    .serviceIcon {
         width: 84;
         height: 84;
     }
@@ -70,7 +75,7 @@
 }
 
 @media all and (width <= 560px) {
-    .workIcon {
+    .serviceIcon {
         width: 48;
         height: 48;
     }
