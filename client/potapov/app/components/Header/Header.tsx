@@ -136,7 +136,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="navModale relative">
+            <div className="navModale absolute">
                 <div className="w-full">
                     <nav className="w-full flex flex-col  text-base font-medium my-10 gap-10">
                         <Link

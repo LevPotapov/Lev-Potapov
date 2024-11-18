@@ -7,11 +7,7 @@ import { TelegramBotService } from './telegram-bot/telegram-bot.service';
 async function bootstrap() {
   const port = 4000;
   const app = await NestFactory.create(AppModule);
-  app.enableCors({
-    origin: [
-      'http://localhost:3000, https://potapov.fr/:4000, https://potapov.fr/:3000, http://potapov.fr/:3000, http://potapov.fr/:4000',
-    ],
-  });
+  app.enableCors();
   app.setGlobalPrefix('api');
 
   //Swagger
