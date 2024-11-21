@@ -39,6 +39,8 @@ const Work = ({
                 className="shadow-inner shadow-shadow rounded-xl w-full h-full"
                 src={HOST_URL + imageUrl}
                 alt={`image de projet "${title}"`}
+                width={740}
+                height={370}
             />
             <Link href={link}>
                 <div

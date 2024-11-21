@@ -32,7 +32,6 @@ const Service = ({
         plus?.classList.toggle('serviceTextContainerShow')
     }
 
-    console.log(iconUrl)
     return (
         <div className="service bg-white p-6 rounded-lg w-auto h-96 shadow-inner shadow-shadow overflow-hidden  hover:overflow-scroll">
             <div className="titleContainer">
@@ -40,6 +39,8 @@ const Service = ({
                     className="serviceIcon"
                     src={HOST_URL + iconUrl}
                     alt={`icône de ${title}`}
+                    width={84}
+                    height={84}
                 />
                 <h3 className="text-blue text-lg font-semibold mt-7 mb-2">
                     {title}

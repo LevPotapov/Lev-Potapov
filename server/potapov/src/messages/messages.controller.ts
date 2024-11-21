@@ -53,7 +53,7 @@ export class MessagesController {
       await this.telegramBotService.sendMessage(userMessage);
 
       const autoResponse: SendMailDto = {
-        from: { name: 'Lev Potapov', address: 'potapov.lev1996@gmail.com' },
+        from: { name: 'Lev Potapov', address: 'lev@potapov.fr' },
         recipient: {
           name: `${createMessageDto.userName}`,
           address: `${createMessageDto.email}`,
@@ -79,7 +79,7 @@ export class MessagesController {
       await this.telegramBotService.gettingResponse(ctx);
 
     const mail: SendMailDto = {
-      from: { name: 'Lev Potapov', address: 'potapov.lev1996@gmail.com' },
+      from: { name: 'Lev Potapov', address: 'lev@potapov.fr' },
       recipient: {
         name: `${messageResponse.name}`,
         address: `${messageResponse.email}`,

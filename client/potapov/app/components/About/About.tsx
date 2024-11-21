@@ -6,11 +6,16 @@ import './About.css'
 
 const About = () => {
     return (
-        <section
-            id="about"
-            style={{ backgroundImage: 'url("/photos/background.webp")' }}
-            className="bg-cover bg-center bg-no-repeat"
-        >
+        <section id="about" className="relative">
+            <Image
+                className="absolute"
+                id="background"
+                src="/photos/background.webp"
+                alt="photo background"
+                width={2000}
+                height={1000}
+                priority
+            />
             <div className="w-full h-full bg-gradient-to-r from-light-gray px-48  relative about">
                 <div className="flex justify-between space-x-40 ">
                     <div className="mt-36  introduction">
@@ -21,6 +26,16 @@ const About = () => {
                             </span>
                             pour votre entreprise
                         </h1>
+                        <h2 className="text-lg mt-6 font-semibold">
+                            Mes formations:
+                        </h2>
+                        <p className="text-lg ">
+                            Bac+4 - Premier Institut Maritime Ukrainien
+                            (Ukraine)
+                        </p>
+                        <p className="text-lg">
+                            Bac+2 - RNCP Informatique (France)
+                        </p>
                         <p className="text-lg mt-6">
                             Je me spécialise dans le développement de sites web
                             qui aident les entreprises à se développer et à
@@ -40,6 +55,7 @@ const About = () => {
                         alt="photo personnelle de Potapov Lev "
                         width={525}
                         height={700}
+                        priority
                     />
                 </div>
 

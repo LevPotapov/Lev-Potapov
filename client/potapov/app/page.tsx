@@ -12,7 +12,10 @@ export default function Home() {
     return (
         <>
             <About />
-            <div className="bg-light-gray contentContainer">
+            <div
+                style={{ minHeight: '2500px' }}
+                className="bg-light-gray contentContainer"
+            >
                 <Works />
                 <Services />
                 <ContactForm />

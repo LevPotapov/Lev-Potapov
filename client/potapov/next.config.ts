@@ -4,13 +4,14 @@ const nextConfig: NextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: 'http',
+                protocol: 'https',
                 hostname: 'potapov.fr',
-                port: '4000',
+                port: '',
                 pathname: '/**',
             },
         ],
     },
+    productionBrowserSourceMaps: true,
 }
 
 export default nextConfig

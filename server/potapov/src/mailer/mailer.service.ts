@@ -9,12 +9,16 @@ export class MailerService {
   constructor(private readonly configService: ConfigService) {}
   mailTransport() {
     const transporter = nodemailer.createTransport({
+      service: this.configService.get<string>('MAIL_SERVICE'),
       host: this.configService.get<string>('MAIL_HOST'),
       port: this.configService.get<number>('MAIL_PORT'),
-      secure: false, // true for port 465, false for other ports
+      secure: false,
       auth: {
         user: this.configService.get<string>('MAIL_USER'),
         pass: this.configService.get<string>('MAIL_PASSWORD'),
+      },
+      tls: {
+        ciphers: 'SSLv3',
       },
     });
     return transporter;
