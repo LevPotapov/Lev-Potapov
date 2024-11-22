@@ -77,17 +77,20 @@ export class MessagesController {
   async redirectingResponses(@Body() ctx: Context) {
     const messageResponse: MailResponseDto =
       await this.telegramBotService.gettingResponse(ctx);
+    try {
+      const mail: SendMailDto = {
+        from: { name: 'Lev Potapov', address: 'lev@potapov.fr' },
+        recipient: {
+          name: `${messageResponse.name}`,
+          address: `${messageResponse.email}`,
+        },
+        subject: 'Making contact',
+        html: `<p><strong>Hello ${messageResponse.name}!</strong></p><p>${messageResponse.text}.</p><p>Cheers!</p>`,
+      };
 
-    const mail: SendMailDto = {
-      from: { name: 'Lev Potapov', address: 'lev@potapov.fr' },
-      recipient: {
-        name: `${messageResponse.name}`,
-        address: `${messageResponse.email}`,
-      },
-      subject: 'Making contact',
-      html: `<p><strong>Hello ${messageResponse.name}!</strong></p><p>${messageResponse.text}.</p><p>Cheers!</p>`,
-    };
-
-    return await this.mailerService.sendMail(mail);
+      return await this.mailerService.sendMail(mail);
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

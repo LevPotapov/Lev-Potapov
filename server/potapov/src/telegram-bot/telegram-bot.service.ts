@@ -40,26 +40,30 @@ export class TelegramBotService {
     const message = '👍';
     await this.bot.telegram.sendMessage(chatId, message);
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    let name = ctx.message.reply_to_message.text.split('Email:  ');
-    name = name[0].split('Name:  ');
-    name = name[1].split('\n')[0];
+    try {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      let name = ctx.message.reply_to_message.text.split('Email:  ');
+      name = name[0].split('Name:  ');
+      name = name[1].split('\n')[0];
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    let email = ctx.message.reply_to_message.text.split('Phone:  ')[0];
-    email = email.split('Email:  ')[1];
-    email = email.split('\n')[0];
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      let email = ctx.message.reply_to_message.text.split('Phone:  ')[0];
+      email = email.split('Email:  ')[1];
+      email = email.split('\n')[0];
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    const text = ctx.message.text;
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      const text = ctx.message.text;
 
-    return {
-      name,
-      email,
-      text,
-    };
+      return {
+        name,
+        email,
+        text,
+      };
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
